@@ -3,6 +3,7 @@ import java.time.LocalDate;
 public class Main {
 
     public static final int CURRENT_YEAR = LocalDate.now().getYear();
+
     public static void printIsYearLeap(int year) {
         boolean leapYear = isYearLeap(year);
         printIsYearLeapResult(year, leapYear);
