@@ -72,6 +72,30 @@ public class Main {
         }
     }
 
+    public static void printAverageArraySum(int[] expenses) {
+        System.out.printf("Average amount of expenses for the day was %.2f rubles.", calculateAverageSum(expenses));
+    }
+
+    private static double calculateAverageSum(int[] expenses) {
+        return (double) calculateTotalSum(expenses) / expenses.length;
+    }
+
+    private static int calculateTotalSum(int[] expenses) {
+        int totalSum = 0;
+        for (int element: expenses) {
+            totalSum += element;
+        }
+        return totalSum;
+    }
+
+    public static int[] generateRandomArray() {
+        java.util.Random random = new java.util.Random();
+        int[] arr = new int[30];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100_000) + 100_000;
+        }
+        return arr;
+    }
 
     public static void main(String[] args) {
         // homework 11 started
@@ -92,5 +116,13 @@ public class Main {
 
         // task 3
         calculateDeliveryDaysAmount(10);
+
+        // task 4 is missed
+
+        // task 5 is missed
+
+        // task 6
+        int[] expenses = generateRandomArray();
+        printAverageArraySum(expenses);
     }
 }
